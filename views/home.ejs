@@ -1,0 +1,24 @@
+<%- include('partials/header') -%>
+
+<h1> Home </h1>
+
+<div>
+    <% homeBlogPost.forEach( (post) => { %>
+      <% if (!post) {%>
+
+      <%} else {%>
+        <div>
+          <div>
+            <div>
+              <h2> <%= post.inputTitle %> </h2>
+            </div>
+            <div>
+              <p> <%= post.inputBody.substr(0,100).concat('...') %> <a href="/post/<%= post.inputTitle %>">Read More </a> </p>
+            </div>
+          </div>
+        </div>
+      <%}%>
+    <% }) %>
+</div>
+
+<%- include('partials/footer') %>
