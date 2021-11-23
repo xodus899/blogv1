@@ -44,8 +44,6 @@ app.get('/', (request,response) => {
       console.log(err);
     }
   });
-
-
 });
 
 app.get('/compose', (request,response) => {
@@ -73,13 +71,8 @@ app.get('/post/:postId', (request,response) => {
 });
 
 app.get('/about', (request,response) => {
-  response.render('about', {aboutEjs: aboutStartingContent});
+  response.render('about');
 });
-
-app.get('/contact', (request,response) => {
-  response.render('contact', {contactEjs: conactStartingContent});
-});
-
 
 app.listen(port || 3000, () => {
   console.log("Running on port 3000")
